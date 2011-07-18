@@ -6,22 +6,13 @@ import javax.swing.*;
 
 class PizzaPnl extends JPanel {
 
-    private Image imgBackground;
-
-    @Override
-    public void paint(Graphics g) {
-        g.drawImage(this.imgBackground, 0, 0, this);
-        setOpaque(false);
-        super.paint(g);
-    }
-
-
-
     public PizzaPnl() {
-        JPanel pnlPhone = new JPanel();
+        JPanel pnlPizza = new JPanel();
         //this.imgBackground = new ImageIcon(getClass().getResource("Resources/logo.jpg" ) ).getImage();
-        pnlPhone.setBackground(Color.red);
-
-        add(pnlPhone, BorderLayout.WEST);
+        pnlPizza.setPreferredSize(new Dimension(180, 100));
+        //pnlPizza.setBackground(Color.red);
+        pnlPizza.setOpaque(false);
+        
+        add(pnlPizza, BorderLayout.WEST);
     }
 }

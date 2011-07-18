@@ -55,17 +55,17 @@ public class IngredientsPersist {
             ingredientsEntity.setPrecio(100.00);
 
             //Se inicia la transaccion
-            Factory.getInstance().getTransaction().begin();
+            EntityManagerCreator.getInstance().getEntity().getTransaction().begin();
 
             //Se almacena
-            Factory.getInstance().persist(ingredientsEntity);
+            EntityManagerCreator.getInstance().getEntity().persist(ingredientsEntity);
 
             //Se asegura
-            Factory.getInstance().getTransaction().commit();
+            EntityManagerCreator.getInstance().getEntity().getTransaction().commit();
 
         //}
 
-        Factory.em.close();
+        
 
     }
 }

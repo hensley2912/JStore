@@ -10,17 +10,18 @@ public class OptionsPnl extends JPanel {
 
     public OptionsPnl() {
         JPanel pnlOptions = new JPanel(new GridLayout(0, 1));
+        pnlOptions.setPreferredSize(new Dimension(180, 100));
+        //pnlOptions.setBackground(Color.red);
         JPanel pnlBotones = new JPanel();
+        pnlBotones.setOpaque(false);
         JButton btmAdd = new JButton("Agregar");
         JButton btmRemove = new JButton("Remover");
         
-        pnlOptions.setSize(450, 200);
-        pnlOptions.setOpaque(false);
         list.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         list.setLayoutOrientation(JList.VERTICAL);
         list.setVisibleRowCount(4);
         JScrollPane listScroller = new JScrollPane(list);
-        listScroller.setPreferredSize(new Dimension(50, 50));
+        listScroller.setPreferredSize(new Dimension(40, 50));
         
         pnlOptions.add(list);
         pnlBotones.add(btmAdd);
