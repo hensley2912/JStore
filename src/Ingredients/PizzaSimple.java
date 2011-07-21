@@ -1,16 +1,14 @@
 package Ingredients;
 
-public class PizzaSimple implements Pizza{
-    private  double price = 150.00;
-    private  String ingredient = "Masa";
-    
+public class PizzaSimple implements Pizza {
+
     @Override
     public double getPrice() {
-        return price;
+        return 1.00;
     }
 
     @Override
     public String getIngredient() {
-        return ingredient;
+        return "Masa, ";
     }
 }

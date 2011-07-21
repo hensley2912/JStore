@@ -7,18 +7,15 @@ public class Components extends JPanel {
 
     public Components() {
         JPanel pnlComponents = new JPanel(new GridLayout(0, 1));
-        pnlComponents.setBackground(Color.red);
-        JPanel pnlUp = new JPanel();
-        JPanel pnlCenter = new JPanel(new FlowLayout());
-        pnlCenter.setOpaque(false);
+        JPanel pnlCenter = new JPanel(new GridLayout(0, 3));
 
-        pnlUp.add(new SearchPnl());
         pnlCenter.add(new PizzaPnl());
         pnlCenter.add(new OptionsPnl());
         pnlCenter.add(new BillPnl());
-        pnlComponents.add(pnlUp, BorderLayout.NORTH);
-        pnlComponents.add(pnlCenter, BorderLayout.CENTER);
-        pnlComponents.add(new TablePnl(), BorderLayout.WEST);
+        
+        //pnlComponents.add(new SearchPnl());
+        pnlComponents.add(pnlCenter);
+        pnlComponents.add(new TablePnl());
         
         add(pnlComponents);
     }

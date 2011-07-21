@@ -1,23 +1,39 @@
-
 package ControllerLayer;
 
 import java.util.*;
-import javax.swing.*;
+import javax.swing.JOptionPane;
 import javax.swing.table.AbstractTableModel;
 
 public class ModelTable extends AbstractTableModel {
 
-    ArrayList<TableIngredients> arrayContainer;
-    String[] columsName = {"Ingredientes", "Precio"};
+    ArrayList<Ingredient> arrayContainerIngredients;
+    String[] columsName = {"Ingredientes:", "Precio:"};
 
     public ModelTable() {
+        arrayContainerIngredients = new ArrayList<Ingredient>();
     }
+
+    public void insertDataModel(Ingredient ingredient) {
+        arrayContainerIngredients.add(ingredient);
+        fireTableDataChanged();
+        //System.out.println(ingredient.getNomIngredient());
+    }
+    
+    public void deleteDataModel(int row){
+        if(row >= 0){         
+            arrayContainerIngredients.remove(row);
+            fireTableRowsDeleted(row, row);
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "No existen articulos seleccionados!", "Informacion", JOptionPane.INFORMATION_MESSAGE);
+        }
+    }    
 
     @Override
     public int getRowCount() {
         int intReturn = 0;
-        if (arrayContainer != null) {
-            intReturn = arrayContainer.size();
+        if (arrayContainerIngredients != null) {
+            intReturn = arrayContainerIngredients.size();
         }
         return intReturn;
     }
@@ -28,20 +44,23 @@ public class ModelTable extends AbstractTableModel {
     }
 
     @Override
+    public String getColumnName(int x) {
+        return columsName[x];
+    }
+
+    @Override
     public Object getValueAt(int x, int y) {
         String objectRetorn = "";
-        TableIngredients tableIngredients = arrayContainer.get(x);
+        Ingredient ingredient = arrayContainerIngredients.get(x);
 
         switch (y) {
             case 0:
-                objectRetorn = tableIngredients.getNomIngredient();
+                objectRetorn = ingredient.getNomIngredient();
                 break;
-            case 1:
-                objectRetorn = String.valueOf(tableIngredients.getPreIngredient());
-                break;
-
+            case 1: objectRetorn = String.valueOf(ingredient.getPreIngredient());
+                break;                
         }
 
-        return false;
+        return objectRetorn;
     }
 }

@@ -3,6 +3,7 @@ package Ingredients;
 abstract class PizzaDecorator implements Pizza {
 
     protected final Pizza pizza;
+    protected String separator = ", ";
 
     public PizzaDecorator(Pizza pizza) {
         this.pizza = pizza;

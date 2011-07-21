@@ -13,7 +13,7 @@ public class Store extends JFrame{
         frame.pack();
         frame.setVisible(true);
         frame.setDefaultCloseOperation(frame.EXIT_ON_CLOSE);
-        //frame.setResizable(false);
+        frame.setResizable(false);
         frame.setLocationRelativeTo(null);
         frame.setLayout(null);
     }
