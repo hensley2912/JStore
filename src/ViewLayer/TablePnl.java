@@ -19,7 +19,6 @@ class TablePnl extends JPanel{
         tableIngredients.setPreferredScrollableViewportSize(new Dimension(450, 75));
         tableIngredients.setFillsViewportHeight(true);
 
-
         JButton btmRemove = new JButton("Remover");
         btmRemove.setPreferredSize(new Dimension(100, 90));
         JButton btmBill = new JButton("Facturar");
@@ -36,6 +35,8 @@ class TablePnl extends JPanel{
             @Override
             public void actionPerformed(ActionEvent e) {
                 SinglentonClass.getInstance().deleteDataModel(tableIngredients.getSelectedRow());
+                
+                SinglentonClass.getInstanceControlDecorator().updateDecorator(tableIngredients.getValueAt(tableIngredients.getSelectedRow(), 0).toString());
             }
         });
     }

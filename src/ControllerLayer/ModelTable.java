@@ -18,16 +18,20 @@ public class ModelTable extends AbstractTableModel {
         fireTableDataChanged();
         //System.out.println(ingredient.getNomIngredient());
     }
-    
-    public void deleteDataModel(int row){
-        if(row >= 0){         
-            arrayContainerIngredients.remove(row);
-            fireTableRowsDeleted(row, row);
-        }
-        else{
+
+    public void deleteDataModel(int row) {
+        if (row >= 0) {
+            //System.out.print(row);
+            if (row == 0) {
+                JOptionPane.showMessageDialog(null, "No puedes vender una pizza sin masa!", "Informacion", JOptionPane.INFORMATION_MESSAGE);
+            } else {
+                arrayContainerIngredients.remove(row);
+                fireTableRowsDeleted(row, row);
+            }
+        } else {
             JOptionPane.showMessageDialog(null, "No existen articulos seleccionados!", "Informacion", JOptionPane.INFORMATION_MESSAGE);
         }
-    }    
+    }
 
     @Override
     public int getRowCount() {
@@ -57,8 +61,9 @@ public class ModelTable extends AbstractTableModel {
             case 0:
                 objectRetorn = ingredient.getNomIngredient();
                 break;
-            case 1: objectRetorn = String.valueOf(ingredient.getPreIngredient());
-                break;                
+            case 1:
+                objectRetorn = String.valueOf(ingredient.getPreIngredient());
+                break;
         }
 
         return objectRetorn;

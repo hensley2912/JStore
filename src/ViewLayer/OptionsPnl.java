@@ -12,13 +12,14 @@ public class OptionsPnl extends JPanel{
     private String[] data = {"Pepperoni", "Queso", "Blue", "Green", "Green", "Green", "Green"};
     private double[] dataPrecio = {1.00, 1.00, 3.00, 4.00, 5.00, 6.00, 7.00};
     private JList list = new JList(data);
+    public JButton btmAdd = new JButton("Agregar");
     
-    public OptionsPnl() {
-
+    public OptionsPnl() {        
+        
         JPanel pnlOptions = new JPanel(new GridLayout(0, 2, 10, 0));
         pnlOptions.setPreferredSize(new Dimension(200, 90));
         //pnlOptions.setBackground(Color.red);
-        JButton btmAdd = new JButton("Agregar");
+        
         //list.setPreferredSize(new Dimension(250, 500));
         JScrollPane listScroller = new JScrollPane(list);
         
@@ -26,6 +27,10 @@ public class OptionsPnl extends JPanel{
         pnlOptions.add(btmAdd);
         
         add(pnlOptions);
+        
+        //Agrega la masa por default
+        SinglentonClass.getInstance().insertDataModel(new Ingredient(SinglentonClass.getInstancePizzaSimple().getIngredient(), SinglentonClass.getInstancePizzaSimple().getPrice()));                
+    
         
         btmAdd.addActionListener(new ActionListener() {
             @Override
@@ -36,6 +41,7 @@ public class OptionsPnl extends JPanel{
                 
             }
         });
+
         
 
     }

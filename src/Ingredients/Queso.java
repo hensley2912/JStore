@@ -1,6 +1,6 @@
 package Ingredients;
 
-public class Queso extends PizzaDecorator{
+public class Queso extends PizzaDecorator {
 
     public Queso(Pizza pizza) {
         super(pizza);
@@ -15,7 +15,4 @@ public class Queso extends PizzaDecorator{
     public double getPrice() {
         return super.getPrice() + 1.00;
     }
-    
-    
-    
 }

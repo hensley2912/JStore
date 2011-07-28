@@ -9,6 +9,6 @@ public class PizzaSimple implements Pizza {
 
     @Override
     public String getIngredient() {
-        return "Masa, ";
+        return "Masa";
     }
 }
