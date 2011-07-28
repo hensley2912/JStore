@@ -8,11 +8,11 @@ public class Queso extends PizzaDecorator {
 
     @Override
     public String getIngredient() {
-        return super.getIngredient() + "Queso" + separator;
+        return super.getIngredient() + "Queso ";
     }
 
     @Override
     public double getPrice() {
-        return super.getPrice() + 1.00;
+        return super.getPrice() + 2.00;
     }
 }

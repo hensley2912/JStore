@@ -8,7 +8,6 @@ public class ControlIngredients {
     public static Pizza pizza = SinglentonClass.getInstancePizzaSimple();
 
     public void addIngredient(Object ingredient) {
-        //BillPnl billPnl = new BillPnl();
 
         if (ingredient.equals("Pepperoni")) {
             pizza = new Pepperoni(pizza);
@@ -19,6 +18,6 @@ public class ControlIngredients {
 
         BillPnl.txtTotal.setText(pizza.getPrice() + "");
 
-        //System.out.println("Cost: " + pizza.getPrice() + "; Ingredients: " + pizza.getIngredient());
+        System.out.println("Cost: " + pizza.getPrice() + "; Ingredients: " + pizza.getIngredient());
     }
 }

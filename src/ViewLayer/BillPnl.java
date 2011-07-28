@@ -11,7 +11,6 @@ public class BillPnl extends JPanel {
     public BillPnl() {
         JPanel pnlBill = new JPanel(new GridLayout(0, 1, 10, 10));
         pnlBill.setPreferredSize(new Dimension(180, 90));
-        //pnlBill.setBackground(Color.red);
 
         JLabel lblTotal = new JLabel("Total:");
 
